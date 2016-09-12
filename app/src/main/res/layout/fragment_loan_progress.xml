@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <com.yiqihao.loan.widget.PagerSlidingTabStrip
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        android:textSize="@dimen/tv_size_micro"
+        app:pstsDividerColor="@color/transparent"
+        app:pstsIndicatorColor="@color/themeColor"
+        app:pstsIndicatorHeight="3dp"
+        app:pstsSelectedTabTextColor="@color/themeColor"
+        app:pstsShouldExpand="true"
+        app:pstsTabPaddingLeftRight="2dp"
+        app:pstsUnderlineColor="@color/themeColor"
+        app:pstsUnderlineHeight="1dp"/>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>

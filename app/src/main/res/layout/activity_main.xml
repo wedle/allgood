@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/app_toolbar_style">
+
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/app_toolbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_gravity="center"
+            android:text="借款申请"/>
+
+        <TextView
+            android:id="@+id/toolbar_right_title"
+            style="@style/app_toolbar_text"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_below="@id/toolbar"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:text="@string/login"/>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginBottom="56dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/ll_tab"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_home"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_home"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/tab_home"/>
+
+            <TextView
+                android:id="@+id/tv_home_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="@string/tab_home"
+                android:textColor="@color/gray_text_color"
+                android:textSize="@dimen/tv_size_little"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_loan_progress"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_loan_progress"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/tab_loan_progress"/>
+
+            <TextView
+                android:id="@+id/tv_loan_progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="@string/tab_loan_progress"
+                android:textColor="@color/gray_text_color"
+                android:textSize="@dimen/tv_size_little"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_personal"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_personal"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/tab_personal"/>
+
+            <TextView
+                android:id="@+id/tv_personal_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="@string/tab_personal"
+                android:textColor="@color/gray_text_color"
+                android:textSize="@dimen/tv_size_little"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@id/ll_tab"
+        android:background="@color/gray_line_color"/>
+
+</RelativeLayout>

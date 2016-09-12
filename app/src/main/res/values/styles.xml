@@ -1,0 +1,150 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@color/background_color</item>
+        <item name="toolbarStyle">@style/MyToolbar</item>
+        <item name="alertDialogTheme">@style/MyDialogTheme</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Activity</item>
+        <item name="navigationIcon">@drawable/ic_back</item>
+    </style>
+
+    <style name="AppTheme" parent="@style/BaseAppTheme">
+
+    </style>
+
+    <style name="NoSwipeBack" parent="@style/BaseAppTheme">
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="MyToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item>
+    </style>
+
+    <style name="app_toolbar_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
+    <style name="app_toolbar_text">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/tv_size_large</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!--buttons color-->
+        <item name="colorAccent">@color/themeColor</item>
+        <!--title and message color-->
+        <!--<item name="android:textColorPrimary">@android:color/white</item>-->
+        <!--dialog background-->
+        <!--<item name="android:windowBackground">@color/white</item>-->
+    </style>
+
+
+
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+
+    <style name="my_style_rectangle_white">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:background">@drawable/white_gray_selector</item>
+        <item name="android:foreground">@drawable/selector_foreground</item>
+    </style>
+
+    <style name="style_text_micro_black">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/tv_size_micro</item>
+    </style>
+
+    <style name="style_text_micro_gary">
+        <item name="android:textColor">@color/gray_text_color</item>
+        <item name="android:textSize">@dimen/tv_size_micro</item>
+    </style>
+
+    <style name="style_text_small_black">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/tv_size_small</item>
+    </style>
+
+    <style name="style_text_small_gary">
+        <item name="android:textColor">@color/gray_text_color</item>
+        <item name="android:textSize">@dimen/tv_size_small</item>
+    </style>
+
+
+    <style name="my_style_text_micro_black" parent="style_text_micro_black">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="my_style_text_micro_gary" parent="style_text_micro_gary">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+    <style name="my_style_text_small_black" parent="style_text_small_black">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="my_style_text_small_gary" parent="style_text_small_gary">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AnimRight" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/in_from_right</item>
+        <item name="android:windowExitAnimation">@anim/out_to_left</item>
+    </style>
+
+    <style name="customDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 半透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+    </style>
+
+    <style name="app_et_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/tv_size_small</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:background">@drawable/account_info_bg</item>
+    </style>
+
+    <style name="PopAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_bottom_enter</item>
+        <item name="android:windowExitAnimation">@anim/pop_bottom_exit</item>
+    </style>
+
+
+</resources>

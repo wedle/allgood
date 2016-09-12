@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/white_gray_selector"
+                android:foreground="@drawable/selector_foreground"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_vertical_margin">
+
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/tv_size_micro"
+        tools:text="adf"/>
+
+    <TextView
+        android:id="@+id/tv_benqi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/tv_time"
+        android:background="@drawable/rect_green_bg"
+        android:gravity="center"
+        android:text="本期"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="@dimen/tv_size_little"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="asdf"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tv_size_small"/>
+
+        <TextView
+            android:id="@+id/tv_lixi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="asdf"
+            android:textColor="@color/gray_text_color"
+            android:textSize="@dimen/tv_size_micro"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

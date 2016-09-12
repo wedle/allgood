@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/app_toolbar_style">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/app_toolbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_gravity="center"
+            android:text="@string/appraise_result"/>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/appraise_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="您的预估借款额度为"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_size_large"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/themeColor"
+                        android:textSize="@dimen/tv_size_big_45"
+                        tools:text="21"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="万元"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tv_size_large"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                style="@style/my_style_rectangle_white"
+                android:layout_marginTop="@dimen/activity_vertical_margin">
+
+                <TextView
+                    android:id="@+id/tv_price_title"
+                    style="@style/style_text_small_black"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="@string/loan_price"/>
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    style="@style/my_style_text_small_gary"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:text="万元"/>
+
+                <EditText
+                    android:id="@+id/et_price"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_toLeftOf="@id/tv_price"
+                    android:layout_toRightOf="@id/tv_price_title"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:inputType="numberDecimal"
+                    tools:text="12"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@color/gray_line_color"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_repay_type"
+                style="@style/my_style_rectangle_white">
+
+                <TextView
+                    android:id="@+id/tv_repay_type_title"
+                    style="@style/style_text_small_black"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="@string/repay_the_way"/>
+
+                <ImageView
+                    android:id="@+id/iv_arrows"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/ic_back_gary_right"/>
+
+                <TextView
+                    android:id="@+id/tv_repay_type"
+                    style="@style/my_style_text_small_black"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_toLeftOf="@id/iv_arrows"
+                    android:layout_toRightOf="@id/tv_repay_type_title"
+                    tools:text="支付宝"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@color/gray_line_color"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_deadline"
+                style="@style/my_style_rectangle_white">
+
+                <TextView
+                    android:id="@+id/tv_deadline_title"
+                    style="@style/style_text_small_black"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="@string/loan_deadline"/>
+
+                <TextView
+                    android:id="@+id/tv_deadline"
+                    style="@style/my_style_text_small_gary"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:text="个月"/>
+
+                <EditText
+                    android:id="@+id/et_deadline"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_toLeftOf="@id/tv_deadline"
+                    android:layout_toRightOf="@id/tv_deadline_title"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:inputType="number"
+                    tools:text="12"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:text="您的借款将默认发放到此银行卡"
+                android:textSize="@dimen/tv_size_small"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_choose_bank"
+                style="@style/my_style_rectangle_white">
+
+                <TextView
+                    android:id="@+id/tv_bank_title"
+                    style="@style/style_text_small_black"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="选择银行卡"/>
+
+                <ImageView
+                    android:id="@+id/iv_arrows1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/ic_back_gary_right"/>
+
+                <TextView
+                    android:id="@+id/tv_bank_name"
+                    style="@style/my_style_text_small_black"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_toLeftOf="@id/iv_arrows1"
+                    android:layout_toRightOf="@id/tv_bank_title"
+                    tools:text="建设银行"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_pact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_size_micro"/>
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="48dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rect_theme_btn_bg"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="@dimen/tv_size_small"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

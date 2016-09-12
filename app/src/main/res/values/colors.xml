@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="themeColor">#FF6E00</color>
+
+    <color name="primary">@color/themeColor</color>
+    <color name="primary_dark">#FF6E00</color>
+    <color name="accent">@color/themeColor</color>
+    <color name="window_background">#EDEDED</color>
+    <color name="status_bar_color">@color/primary_dark</color>
+    <color name="background_color">#EDEDED</color>
+
+    <color name="white">#ffffff</color>
+    <color name="red">#ff0000</color>
+    <color name="white50">#c5ffffff</color>
+    <color name="themeColor50">#80FF6E00</color>
+    <color name="black">#000000</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="gray_text_color">#999999</color>
+    <color name="gray_bg">#d1d1d1</color>
+    <color name="gray_line_color">#CECECE</color>
+
+</resources>

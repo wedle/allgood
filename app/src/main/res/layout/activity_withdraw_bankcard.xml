@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/app_toolbar_style">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/app_toolbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_gravity="center"
+            android:text="提现银行卡"/>
+
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="right"
+            android:padding="18dp"
+            android:src="@drawable/ic_add_white"
+            android:visibility="gone"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.yiqihao.loan.widget.MultiStateView
+        android:id="@+id/mv_state"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        app:msv_emptyView="@layout/empty_view"
+        app:msv_errorView="@layout/error_view"
+        app:msv_loadingView="@layout/loading_view"
+        app:msv_viewState="loading">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/lv_bank_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:divider="@color/background_color"
+                android:dividerHeight="8dp"/>
+
+            <TextView
+                android:id="@+id/tv_unbind_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:visibility="gone"
+                android:gravity="center"
+                android:text="客户端已充值成功的银行卡无法直接删除，如需删除\n请咨询客服专线：400-900-1717"
+                android:textColor="@color/gray_text_color"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+    </com.yiqihao.loan.widget.MultiStateView>
+
+</LinearLayout>

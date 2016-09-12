@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_poster"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:id="@+id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:orientation="horizontal" />
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_base_info"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_car_info"
+                android:layout_marginRight="30dp"
+                android:layout_toLeftOf="@+id/tv_car_info"
+                android:background="@drawable/btn_base_info"
+                android:gravity="center_horizontal"
+                android:padding="4dp"
+                android:text="提交基本信息\n评估借款额度"
+                android:textSize="@dimen/tv_size_little" />
+
+            <ImageView
+                android:id="@+id/iv_base_info"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignLeft="@+id/tv_base_info"
+                android:layout_marginTop="56dp"
+                android:src="@drawable/base_info" />
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="90dp"
+                android:layout_toRightOf="@+id/iv_base_info"
+                android:src="@drawable/ic_page" />
+
+            <TextView
+                android:id="@+id/tv_car_info"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="160dp"
+                android:background="@drawable/btn_car_info"
+                android:gravity="center_horizontal"
+                android:padding="4dp"
+                android:text="提交车辆信息\n详细借款资料"
+                android:textSize="@dimen/tv_size_little" />
+
+            <ImageView
+                android:id="@+id/iv_car_info"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignLeft="@+id/tv_car_info"
+                android:layout_marginTop="56dp"
+                android:src="@drawable/car_info" />
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="90dp"
+                android:layout_toRightOf="@+id/iv_car_info"
+                android:src="@drawable/ic_page" />
+
+            <TextView
+                android:id="@+id/tv_fastest_hour"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_car_info"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@+id/tv_car_info"
+                android:background="@drawable/btn_fastest_hour"
+                android:gravity="center_horizontal"
+                android:padding="4dp"
+                android:text="最快3小时\n即可放货"
+                android:textSize="@dimen/tv_size_little" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignLeft="@+id/tv_fastest_hour"
+                android:layout_marginTop="56dp"
+                android:src="@drawable/fastest_hour" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="246dp"
+                android:background="@color/gray_line_color" />
+
+            <Button
+                android:id="@+id/btn_loan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="280dp"
+                android:background="@drawable/btn_apply_bg"
+                android:text="立即申请借款"
+                android:textColor="@drawable/btn_apply_text"
+                android:textSize="@dimen/tv_size_large" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</ScrollView>

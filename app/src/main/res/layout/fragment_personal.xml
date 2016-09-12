@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<in.srain.cube.views.ptr.PtrClassicFrameLayout android:id="@+id/ptr_frame"
+                                               xmlns:android="http://schemas.android.com/apk/res/android"
+                                               xmlns:app="http://schemas.android.com/apk/res-auto"
+                                               android:layout_width="match_parent"
+                                               android:layout_height="match_parent"
+                                               app:ptr_duration_to_close="200"
+                                               app:ptr_duration_to_close_header="1000"
+                                               app:ptr_keep_header_when_refresh="true"
+                                               app:ptr_pull_to_fresh="false"
+                                               app:ptr_ratio_of_header_height_to_refresh="1.2"
+                                               app:ptr_resistance="1.7">
+
+    <ScrollView
+        android:id="@+id/sv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/themeColor"
+                android:padding="@dimen/activity_vertical_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 最近一笔待还总额(元)"
+                    android:textColor="@color/white50"
+                    android:textSize="@dimen/tv_size_small"/>
+
+                <TextView
+                    android:id="@+id/tv_week_commission"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/tv_size_over_big"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/themeColor50"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/themeColor"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_vertical_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 待还款本金(元)"
+                    android:textColor="@color/white50"
+                    android:textSize="@dimen/tv_size_small"/>
+
+                <TextView
+                    android:id="@+id/tv_commission"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/tv_size_small"/>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/gray_line_color"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_personal_name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/white_gray_selector"
+                android:foreground="@drawable/selector_foreground">
+
+                <ImageView
+                    android:id="@+id/iv_personal_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/ic_personal"/>
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/iv_personal_name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_size_micro"/>
+
+
+                <ImageView
+                    android:id="@+id/iv_name_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_back_gary_right"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_my_commission"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/white_gray_selector"
+                android:foreground="@drawable/selector_foreground">
+
+                <ImageView
+                    android:id="@+id/iv_my_commission"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/ic_loan_plan"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/iv_my_commission"
+                    android:text="还款"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_size_micro"/>
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_back_gary_right"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_personal_card"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/white_gray_selector"
+                android:foreground="@drawable/selector_foreground">
+
+                <ImageView
+                    android:id="@+id/iv_personal_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/ic_bank_card"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/iv_personal_card"
+                    android:text="银行卡管理"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_size_micro"/>
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_back_gary_right"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="前置流程验证"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </ScrollView>
+</in.srain.cube.views.ptr.PtrClassicFrameLayout>
+

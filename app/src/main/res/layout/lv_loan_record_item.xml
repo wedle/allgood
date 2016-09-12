@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="horizontal"
+              android:gravity="center_vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        tools:text="04-21 15:23"
+        style="@style/my_style_text_micro_gary"/>
+
+
+    <RelativeLayout
+        android:layout_width="20dp"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_height="wrap_content">
+
+        <View
+            android:background="#10f37c11"
+            android:layout_centerHorizontal="true"
+            android:layout_width="4dp"
+            android:layout_height="56dp"/>
+
+        <ImageView
+            android:src="@drawable/theme_dot"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_role"
+        android:text="审批申请人送审给xxx"
+        style="@style/my_style_text_small_black"/>
+
+
+</LinearLayout>

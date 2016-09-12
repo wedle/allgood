@@ -1,0 +1,239 @@
+package com.yiqihao.loan.ui.activity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.yiqihao.loan.R;
+import com.yiqihao.loan.mvp.presenters.ForgotPasswordPresenter;
+import com.yiqihao.loan.mvp.views.ForgotPasswordView;
+import com.yiqihao.loan.utils.T;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+/**
+ * 找回密码
+ * Created by 冯浩 on 16/8/17.
+ */
+public class ForgotPasswordActivity extends MvpActivity<ForgotPasswordView, ForgotPasswordPresenter> implements
+		ForgotPasswordView {
+
+	@BindView(R.id.toolbar)
+	Toolbar toolbar;
+	@BindView(R.id.et_phone)
+	EditText etPhone;
+	@BindView(R.id.et_password)
+	EditText etPassword;
+	@BindView(R.id.et_confirm_password)
+	EditText etConfirmPassword;
+	@BindView(R.id.tv_code)
+	TextView tvCode;
+	@BindView(R.id.tv_get_code)
+	TextView tvGetCode;
+	@BindView(R.id.et_code)
+	EditText etCode;
+	@BindView(R.id.btn_register)
+	Button btnRegister;
+
+	private boolean isCodeWait = false;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_forgot_password);
+		ButterKnife.bind(this);
+		initToolBar(toolbar, true);
+		initView();
+	}
+
+	private void initView() {
+	}
+
+	@NonNull
+	@Override
+	public ForgotPasswordPresenter createPresenter() {
+		return new ForgotPasswordPresenter();
+	}
+
+	@OnClick({R.id.tv_get_code, R.id.btn_register})
+	public void onClick(View view) {
+		switch (view.getId()) {
+			case R.id.tv_get_code:
+				String phone = etPhone.getText().toString().replace(" ", "");
+
+				if (TextUtils.isEmpty(phone)) {
+					T.showShort(ForgotPasswordActivity.this, "请输入手机号");
+					return;
+				}
+
+				presenter.sendSmsCode(phone);
+				break;
+			case R.id.btn_register:
+
+				String phoneNum = etPhone.getText().toString().replace(" ", "");
+
+				String code = etCode.getText().toString();
+
+				String pwd = etPassword.getText().toString();
+
+				String confirmPwd = etConfirmPassword.getText().toString();
+
+				if (TextUtils.isEmpty(phoneNum)) {
+					T.showShort(ForgotPasswordActivity.this, "请输入手机号");
+					return;
+				}
+
+				if (TextUtils.isEmpty(code)) {
+					T.showShort(ForgotPasswordActivity.this, "请输入验证码");
+					return;
+				}
+
+				if (TextUtils.isEmpty(pwd)) {
+					T.showShort(ForgotPasswordActivity.this, "请输入密码");
+					return;
+				}
+
+				if (TextUtils.isEmpty(confirmPwd)) {
+					T.showShort(ForgotPasswordActivity.this, "请输入确认密码");
+					return;
+				}
+
+
+				if (!TextUtils.equals(pwd, confirmPwd)) {
+					T.showShort(ForgotPasswordActivity.this, "两次密码输入不一致");
+					return;
+				}
+
+				presenter.forgotPassword(phoneNum,code,pwd);
+				
+				break;
+		}
+	}
+
+	@Override
+	public void showProgress(String msg) {
+		getProgressDialog().setMessage(msg);
+		getProgressDialog().show();
+	}
+
+	@Override
+	public void hideProgress() {
+		getProgressDialog().dismiss();
+
+	}
+
+	@Override
+	public void sendSmsCodeSuccess(String msg) {
+		stactTimer();
+	}
+
+	@Override
+	public void sendSmsCodeError(boolean isShowError, String msg) {
+		cancelSendCode();
+		if (isShowError) {
+			T.showShort(this, "" + msg);
+		} else {
+			T.showShort(this, "验证码发送失败");
+		}
+	}
+
+	@Override
+	public void forgotPasswordSuccess() {
+		T.showShort(this, "找回密码成功,请登录");
+		startActivity(new Intent(this,LoginActivity.class));
+	}
+
+	@Override
+	public void forgotPasswordError(boolean isShowError, String msg) {
+		if (isShowError) {
+			T.showShort(this, "" + msg);
+		} else {
+			T.showShort(this, "找回密码失败");
+		}
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		if (timer != null)
+			timer.cancel();
+	}
+
+	int timecode;
+	Timer timer;
+
+	private void stactTimer() {
+		isCodeWait = true;
+		timecode = 60;
+		if (timer != null)
+			timer.cancel();
+		timer = new Timer();
+		timer.schedule(new TimerTask() {
+			@Override
+			public void run() {
+				Message message = new Message();
+				message.what = 1;
+				handler.sendMessage(message);
+			}
+		}, 0, 1000);
+		tvGetCode.setFocusable(false);
+		tvGetCode.setClickable(false);
+	}
+
+	final Handler handler = new Handler() {
+		public void handleMessage(Message msg) {
+
+			switch (msg.what) {
+				case 1:
+					timecode--;
+					if (timecode != 0) {
+						tvGetCode.setText(getString(R.string.afresh_obtain_seccode) + "(" + timecode + ")");
+					} else {
+						tvGetCode.setText(getString(R.string.afresh_obtain_seccode));
+						cancelSendCode();
+					}
+					break;
+			}
+			super.handleMessage(msg);
+		}
+	};
+
+	private void cancelSendCode() {
+		isCodeWait = false;
+
+		if (timer != null)
+			timer.cancel();
+
+		btnCodeStatus(true);
+		tvGetCode.setText("获取验证码");
+	}
+
+	/**
+	 * 改变验证码按钮
+	 *
+	 * @param flag
+	 */
+	private void btnCodeStatus(boolean flag) {
+		if (flag) {
+			tvGetCode.setFocusable(true);
+			tvGetCode.setClickable(true);
+		} else {
+			tvGetCode.setFocusable(false);
+			tvGetCode.setClickable(false);
+		}
+	}
+
+}

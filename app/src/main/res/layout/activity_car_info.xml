@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/app_toolbar_style">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/app_toolbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_gravity="center"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/rl_car_model"
+                style="@style/my_style_rectangle_white">
+
+                <TextView
+                    android:id="@+id/tv_car_title"
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="@string/car_model"/>
+
+                <ImageView
+                    android:id="@+id/iv_arrows"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/ic_back_gary_right"/>
+
+                <TextView
+                    android:id="@+id/tv_car_model"
+                    style="@style/my_style_text_small_black"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_toRightOf="@id/tv_car_title"
+                    android:layout_toLeftOf="@id/iv_arrows"
+                    tools:text="阿斯顿马丁"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <LinearLayout
+                style="@style/my_style_rectangle_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="公里数"/>
+
+
+                <EditText
+                    android:id="@+id/tv_kilometer"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    tools:text="70000"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <LinearLayout
+                style="@style/my_style_rectangle_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="车身颜色"/>
+
+
+                <EditText
+                    android:id="@+id/tv_car_color"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    tools:text="白色"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <LinearLayout
+                style="@style/my_style_rectangle_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="车牌号"/>
+
+
+                <EditText
+                    android:id="@+id/tv_car_number"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    tools:text="鄂A18HQ1"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <LinearLayout
+                style="@style/my_style_rectangle_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="车架号"/>
+
+
+                <EditText
+                    android:id="@+id/tv_chassis_number"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    tools:text="LLLAAAAA"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <LinearLayout
+                style="@style/my_style_rectangle_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="发动机号"/>
+
+
+                <EditText
+                    android:id="@+id/tv_engine_number"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    tools:text="09129012"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <LinearLayout
+                style="@style/my_style_rectangle_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="登记证书"/>
+
+
+                <EditText
+                    android:id="@+id/tv_reg_certificate"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    tools:text="09129012"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <LinearLayout
+                android:id="@+id/ll_reg_date"
+                style="@style/my_style_rectangle_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="初次登记日期"/>
+
+
+                <TextView
+                    android:id="@+id/tv_reg_date"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    tools:text="2016"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <LinearLayout
+                style="@style/my_style_rectangle_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="开票价格(元)"/>
+
+
+                <EditText
+                    android:id="@+id/tv_price"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    tools:text="18"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <LinearLayout
+                android:id="@+id/ll_kaipiao_date"
+                style="@style/my_style_rectangle_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="开票日期"/>
+
+
+                <TextView
+                    android:id="@+id/tv_kaipiao_date"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    tools:text="2016"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <LinearLayout
+                style="@style/my_style_rectangle_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="保单"/>
+
+
+                <EditText
+                    android:id="@+id/tv_baodan"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    tools:text="18"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <LinearLayout
+                style="@style/my_style_rectangle_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="违章记录"/>
+
+
+                <EditText
+                    android:id="@+id/tv_record"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    tools:text="18"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <LinearLayout
+                style="@style/my_style_rectangle_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="过户次数"/>
+
+
+                <EditText
+                    android:id="@+id/tv_count"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:inputType="number"
+                    tools:text="18"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <LinearLayout
+                android:id="@+id/ll_transfer_date"
+                style="@style/my_style_rectangle_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="过户时间"/>
+
+
+                <TextView
+                    android:id="@+id/tv_transfer_date"
+                    style="@style/style_text_small_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    tools:text="2016"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_loan_type"
+                android:layout_marginBottom="48dp"
+                style="@style/my_style_rectangle_white">
+
+                <TextView
+                    android:id="@+id/tv_car_loan_title"
+                    style="@style/style_text_small_gary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="借款类型"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/ic_back_gary_bottom"/>
+
+                <TextView
+                    android:id="@+id/tv_loan_type"
+                    style="@style/my_style_text_small_black"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_toRightOf="@id/tv_car_loan_title"
+                    tools:text="是"/>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="32dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rect_theme_btn_bg"
+                android:text="保存"
+                android:textColor="@color/white"
+                android:textSize="@dimen/tv_size_small"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

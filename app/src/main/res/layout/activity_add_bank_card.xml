@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@+id/root_layout"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/app_toolbar_style">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/app_toolbar_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar"
+                android:layout_gravity="center"
+                android:text="添加银行卡"/>
+
+        </android.support.v7.widget.Toolbar>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/gray_line_color"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_bank_card_no"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:text="银行卡号"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_size_small"/>
+
+            <com.yiqihao.loan.widget.FormatEditText
+                android:id="@+id/et_bank_card_no"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_toRightOf="@id/tv_bank_card_no"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:inputType="number"
+                app:openFormat="true"
+                app:formatType="cardNum"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_size_small"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray_line_color"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_bank"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/white_gray_selector"
+            android:foreground="@drawable/selector_foreground">
+
+            <TextView
+                android:id="@+id/tv_bank"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:inputType="number"
+                android:text="开户银行"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_size_small"/>
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_arrows_bottom_gary"/>
+
+            <TextView
+                android:id="@+id/tv_bank_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@id/iv_back"
+                android:layout_toRightOf="@id/tv_bank"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_size_small"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_bank_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_bank_provice"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/white_gray_selector"
+                android:foreground="@drawable/selector_foreground">
+
+                <TextView
+                    android:id="@+id/tv_bank_provice"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:inputType="number"
+                    android:text="省份"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_size_small"/>
+
+                <ImageView
+                    android:id="@+id/iv_back_provice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_arrows_bottom_gary"/>
+
+                <TextView
+                    android:id="@+id/tv_bank_provice_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_toLeftOf="@id/iv_back_provice"
+                    android:layout_toRightOf="@id/tv_bank_provice"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_size_small"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_bank_city"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/white_gray_selector"
+                android:foreground="@drawable/selector_foreground">
+
+                <TextView
+                    android:id="@+id/tv_bank_city"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:inputType="number"
+                    android:text="城市"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_size_small"/>
+
+                <ImageView
+                    android:id="@+id/iv_back_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_arrows_bottom_gary"/>
+
+                <TextView
+                    android:id="@+id/tv_bank_city_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_toLeftOf="@id/iv_back_city"
+                    android:layout_toRightOf="@id/tv_bank_city"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_size_small"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_bank_branch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/tv_bank_branch"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:text="支行名称"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_size_small"/>
+
+                <EditText
+                    android:id="@+id/et_bank_branch_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:scrollHorizontally="false"
+                    android:singleLine="false"
+                    android:layout_toRightOf="@id/tv_bank_branch"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_size_small"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line_color"/>
+
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/gray_line_color"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_phone_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:text="银行预留手机号"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_size_small"/>
+
+            <com.yiqihao.loan.widget.FormatEditText
+                android:id="@+id/et_phone_num"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_toRightOf="@id/tv_phone_num"
+                android:background="@null"
+                android:gravity="center_vertical"
+                app:openFormat="true"
+                app:formatType="phoneNum"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_size_small"/>
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray_line_color"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_code"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:text="验证码"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_size_small"/>
+
+            <TextView
+                android:id="@+id/tv_get_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rect_theme_bg"
+                android:gravity="center"
+                android:text="获取验证码"
+                android:textColor="@color/themeColor"
+                android:textSize="@dimen/tv_size_micro"/>
+
+            <EditText
+                android:id="@+id/et_code"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@id/tv_get_code"
+                android:layout_toRightOf="@id/tv_code"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_size_small"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:background="@color/gray_line_color"/>
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rect_theme_btn_bg"
+            android:text="保存"
+            android:textColor="@color/white"
+            android:textSize="@dimen/tv_size_small"/>
+
+    </LinearLayout>
+</ScrollView>

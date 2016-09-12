@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.LoanDetailActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/app_toolbar_style">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/app_toolbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_gravity="center"
+            android:text="借款详情" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.yiqihao.loan.widget.MultiStateView
+        android:id="@+id/mv_state"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:msv_emptyView="@layout/empty_view"
+        app:msv_errorView="@layout/error_view"
+        app:msv_loadingView="@layout/loading_view"
+        app:msv_viewState="loading">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="抵押车借款"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/tv_size_small" />
+
+                        <TextView
+                            android:id="@+id/tv_time_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:text="12个月  30万"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/tv_size_small" />
+
+                        <TextView
+                            android:id="@+id/tv_loan_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:text="借款申请编号"
+                            android:textColor="@color/gray_text_color"
+                            android:textSize="@dimen/tv_size_micro" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="26dp"
+                        android:background="@drawable/bg_rect_orange"
+                        android:padding="6dp"
+                        android:text="待补充资料"
+                        android:textColor="@color/themeColor"
+                        android:textSize="@dimen/tv_size_micro" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="6dp"
+                    android:paddingLeft="16dp"
+                    android:text="基本信息"
+                    android:textSize="@dimen/tv_size_small" />
+
+                <RelativeLayout
+                    android:id="@+id/loan_info"
+                    style="@style/my_style_rectangle_white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:text="借款信息"
+                        android:textSize="@dimen/tv_size_small" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_loan_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="16dp"
+                        android:src="@drawable/ic_back_gary_right" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/gray_line_color" />
+
+                <RelativeLayout
+                    android:id="@+id/car_info"
+                    style="@style/my_style_rectangle_white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:text="车辆信息"
+                        android:textSize="@dimen/tv_size_small" />
+
+                    <TextView
+                        android:id="@+id/tv_car_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="32dp"
+                        android:layout_toLeftOf="@+id/iv_car_info"
+                        android:text="待补充资料"
+                        android:textColor="@color/themeColor"
+                        android:textSize="@dimen/tv_size_small" />
+
+                    <ImageView
+                        android:id="@+id/iv_car_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="16dp"
+                        android:src="@drawable/ic_back_gary_right" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/gray_line_color" />
+
+                <RelativeLayout
+                    android:id="@+id/refund_plan"
+                    style="@style/my_style_rectangle_white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:text="还款计划"
+                        android:textSize="@dimen/tv_size_small" />
+
+                    <ImageView
+                        android:id="@+id/iv_refund_plan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="16dp"
+                        android:src="@drawable/ic_back_gary_right" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_record"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="6dp"
+                    android:paddingLeft="16dp"
+                    android:text="审批记录"
+                    android:textSize="@dimen/tv_size_small" />
+
+                <com.yiqihao.loan.widget.NoScrollListView
+                    android:id="@+id/lv_record"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:divider="@null" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_kefu"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/white_gray_selector"
+                    android:foreground="@drawable/selector_foreground">
+
+                    <ImageView
+                        android:id="@+id/iv_phone"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:src="@drawable/ic_phone" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@+id/iv_phone"
+                        android:text="客服电话"
+                        android:textSize="@dimen/tv_size_big" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@+id/iv_phone"
+                        android:text="@string/kefu_phone"
+                        android:textSize="@dimen/tv_size_big" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </ScrollView>
+    </com.yiqihao.loan.widget.MultiStateView>
+
+</LinearLayout>

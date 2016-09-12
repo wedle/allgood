@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/app_toolbar_style">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/app_toolbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_gravity="center"
+            android:text="提前还款"/>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/ptr_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        app:ptr_duration_to_close="200"
+        app:ptr_duration_to_close_header="1000"
+        app:ptr_keep_header_when_refresh="true"
+        app:ptr_pull_to_fresh="false"
+        app:ptr_ratio_of_header_height_to_refresh="1.2"
+        app:ptr_resistance="1.7">
+
+        <com.yiqihao.loan.widget.MultiStateView
+            android:id="@+id/mv_state"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            app:msv_emptyView="@layout/empty_view"
+            app:msv_errorView="@layout/error_view"
+            app:msv_loadingView="@layout/loading_view"
+            app:msv_viewState="loading">
+
+            <com.yiqihao.loan.widget.listview.PagingListView
+                android:id="@+id/lv_repay_plan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/gray_line_color"
+                android:dividerHeight="8dp"
+                android:layout_marginBottom="56dp"
+                android:scrollbarStyle="outsideOverlay"/>
+
+        </com.yiqihao.loan.widget.MultiStateView>
+
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_amount"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tv_size_small"/>
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/rect_theme_btn_bg"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:text="提前还款"
+            android:textColor="@color/white"
+            android:textSize="@dimen/tv_size_small"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

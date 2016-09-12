@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">一起好借款</string>
+    <string name="tab_home">首页</string>
+    <string name="tab_loan_progress">借款进度</string>
+    <string name="tab_personal">个人中心</string>
+    <string name="login">登录</string>
+    <string name="phone_num">手机号</string>
+    <string name="complete">完成</string>
+    <string name="register">注册</string>
+
+    <string name="afresh_obtain_seccode">重新获取</string>
+    <string name="forgot_password">找回密码</string>
+    <string name="loan_apply">借款申请</string>
+    <string name="nearby_stores">最近门店</string>
+    <string name="car_model">品牌型号</string>
+    <string name="is_car_loan">是否有车贷</string>
+    <string name="is_car_guard">是否同意押车</string>
+    <string name="first_reg_date">初次登记日期</string>
+    <string name="new_car_price">新车购入价</string>
+    <string name="car_color">车身颜色</string>
+    <string name="kilometers">公里数</string>
+    <string name="user_name">姓名</string>
+    <string name="id_card">身份证号</string>
+    <string name="appraise_result">评估结果</string>
+    <string name="loan_price">借款金额</string>
+    <string name="repay_the_way">还款方式</string>
+    <string name="loan_deadline">借款期限</string>
+    <string name="loading_data_error">数据加载失败</string>
+    <string name="kefu_phone">400-900-1717</string>
+    <string name="loan_repay_plan_content">[%1$s/%2$s]  本金:%3$s  利息:%4$s  利息管理费:%5$s元</string>
+    <string name="repay_plan_content">[%1$s/%2$s] %3$s･%4$s</string>
+    <string name="permission_guide">权限缺失可能导致某些功能无法正常使用。\n请前往"设置"-"权限管理"-打开所需权限。</string>
+    <string name="permission_help_storage">选择更新需要您的读写权限。\n点击下一步配置权限\n点击取消将无法正常使用</string>
+
+
+</resources>
